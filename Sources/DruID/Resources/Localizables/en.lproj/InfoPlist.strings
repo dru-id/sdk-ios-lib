@@ -1,0 +1,12 @@
+/*
+InfoPlist.strings
+
+GENERATED - DO NOT MODIFY - use the localio gem instead.
+
+Created by localio.
+*/
+
+
+NSCameraUsageDescription = "The app would like to access your camera to add a photo to an item";
+
+NSPhotoLibraryUsageDescription = "The app would like to access your photo library to add a photo to an item";

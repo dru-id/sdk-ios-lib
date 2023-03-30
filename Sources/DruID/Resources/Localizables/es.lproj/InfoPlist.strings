@@ -1,0 +1,12 @@
+/*
+InfoPlist.strings
+
+GENERATED - DO NOT MODIFY - use the localio gem instead.
+
+Created by localio.
+*/
+
+
+NSCameraUsageDescription = "La app solicita permiso para acceder a la cámara para añadir una foto a un artículo";
+
+NSPhotoLibraryUsageDescription = "La app solicita permiso para acceder a la galería  para añadir una foto a un artículo";

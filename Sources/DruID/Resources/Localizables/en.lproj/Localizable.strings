@@ -1,0 +1,78 @@
+/*
+Localizable.strings
+
+GENERATED - DO NOT MODIFY - use the localio gem instead.
+
+Created by localio.
+*/
+
+
+
+// Common
+
+"common_language_code" = "en";
+"common_cancel_text" = "Cancel";
+"common_close_text" = "Close";
+"common_accept_text" = "Accept";
+"common_done_text" = "Done";
+"common_back_text" = "Back";
+"common_continue_text" = "Continue";
+"common_save_text" = "Save";
+"common_edit_text" = "Edit";
+"common_yes_text" = "Yes";
+"common_no_text" = "No";
+"common_error_text" = "Error";
+"common_unknown_error_text" = "Unknown error";
+"common_loading_text" = "Loading...";
+"common_mandatory_text" = "Mandatory";
+"common_facebook_button" = "Facebook";
+"common_apple_button" = "Apple";
+"common_accept_all_switch" = "I accept all";
+"common_invalid_email_text" = "Invalid email";
+
+// Login
+
+"login_username_title" = "Username";
+"login_username_placeholder" = "Email";
+"login_password_title" = "Password";
+"login_password_placeholder" = "Enter your password";
+"login_forgot_password_button" = "Forgot password";
+"login_login_button" = "LOG IN";
+"login_not_account_yet_text" = "Don’t have an account?";
+"login_register_button" = "Register now";
+
+// Link Account
+
+"link_account_header_text" = "Your email has already been previously registered, enter the password you used to synchronize the accounts";
+"link_account_password_title" = "Password";
+"link_account_password_placeholder" = "Enter your password";
+"link_account_sync_button" = "Sync up";
+
+// Register
+
+"register_title_text" = "Welcome!";
+"register_header_text" = "Please enter your details or register with ";
+"register_send_button" = "Send";
+"register_validation_error_text" = "Check the form, there are validation errors";
+"register_optional_text" = "(optional)";
+
+// Register confirmation
+
+"register_confirmation_title_text" = "Check your inbox! ";
+"register_confirmation_message_text" = "We have sent you an email to confirm the creation of your account. 
+Please, validate it by clicking the CONFIRM ACCOUNT button.";
+"register_confirmation_success_but_email_not_sent_text" = "User registered, but couldn't send register email confirmation";
+"register_confirmation_sucess_already_confirmed_text" = "Registered user, you can now login!";
+"register_confirmation_accept_button" = "ACCEPT";
+
+// Register Terms Only
+
+"register_terms_only_send_button" = "Send";
+
+// Reset password
+
+"reset_password_header_text" = "Enter your email so we can send you the instructions to reset the password";
+"reset_password_email_title" = "Email";
+"reset_password_email_placeholder" = "Enter your email";
+"reset_password_send_button" = "SEND";
+"reset_password_success_text" = "You will receive a notification with a code and link to reset the current password and change it by a new one.";

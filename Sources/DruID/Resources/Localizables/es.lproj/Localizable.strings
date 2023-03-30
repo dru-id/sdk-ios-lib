@@ -1,0 +1,78 @@
+/*
+Localizable.strings
+
+GENERATED - DO NOT MODIFY - use the localio gem instead.
+
+Created by localio.
+*/
+
+
+
+// Common
+
+"common_language_code" = "es";
+"common_cancel_text" = "Cancelar";
+"common_close_text" = "Cerrar";
+"common_accept_text" = "Aceptar";
+"common_done_text" = "Hecho";
+"common_back_text" = "Atrás";
+"common_continue_text" = "Continuar";
+"common_save_text" = "Guardar";
+"common_edit_text" = "Editar";
+"common_yes_text" = "Sí";
+"common_no_text" = "No";
+"common_error_text" = "Error";
+"common_unknown_error_text" = "Error desconocido";
+"common_loading_text" = "Cargando...";
+"common_mandatory_text" = "Requerido";
+"common_facebook_button" = "Facebook";
+"common_apple_button" = "Apple";
+"common_accept_all_switch" = "Acepto todo";
+"common_invalid_email_text" = "El email no es válido";
+
+// Login
+
+"login_username_title" = "Usuario";
+"login_username_placeholder" = "Email";
+"login_password_title" = "Contraseña";
+"login_password_placeholder" = "Introduce tu contraseña";
+"login_forgot_password_button" = "Olvidé mi contraseña";
+"login_login_button" = "ACCEDER";
+"login_not_account_yet_text" = "¿No tienes una cuenta?";
+"login_register_button" = "Regístrate ahora";
+
+// Link Account
+
+"link_account_header_text" = "Tu email ya ha sido registrado previamente, introduce la contraseña que utilizaste para sincronizar las cuentas";
+"link_account_password_title" = "Contraseña";
+"link_account_password_placeholder" = "Introduce tu contraseña";
+"link_account_sync_button" = "Sincronizar";
+
+// Register
+
+"register_title_text" = "¡Bienvenidos!";
+"register_header_text" = "Por favor introduce tus datos o regístrate con";
+"register_send_button" = "Enviar";
+"register_validation_error_text" = "Revisa el formulario, hay errores de validación";
+"register_optional_text" = "(opcional)";
+
+// Register confirmation
+
+"register_confirmation_title_text" = "¡Revise su correo!";
+"register_confirmation_message_text" = "Le hemos enviado un correo electrónico para confirmar la creación de su cuenta.
+Por favor, valide haciendo clic en el botón CONFIRMAR CUENTA.";
+"register_confirmation_success_but_email_not_sent_text" = "Usuario registrado, pero no se ha podido enviar el mail de confirmación de registro";
+"register_confirmation_sucess_already_confirmed_text" = "Usuario registrado, ¡ya puedes hacer login!";
+"register_confirmation_accept_button" = "ACEPTAR";
+
+// Register Terms Only
+
+"register_terms_only_send_button" = "Enviar";
+
+// Reset password
+
+"reset_password_header_text" = "Introduzca su correo electrónico para que podamos enviarle las instrucciones para restablecer la contraseña";
+"reset_password_email_title" = "Email";
+"reset_password_email_placeholder" = "Introduce tu email";
+"reset_password_send_button" = "ENVIAR";
+"reset_password_success_text" = "Recibirás una notificación con un código y un enlace para restablecer la contraseña actual y cambiarla por una nueva.";

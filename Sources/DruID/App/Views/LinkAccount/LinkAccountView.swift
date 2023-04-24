@@ -38,6 +38,9 @@ public struct LinkAccountView<ViewModel: LinkAccountVM>: View {
                         
                         Text(Strings.link_account_header_text)
                             .font(.callout)
+                            .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity, alignment: .center)
                         
                         SecureFieldView(
                             title: Strings.link_account_password_title,

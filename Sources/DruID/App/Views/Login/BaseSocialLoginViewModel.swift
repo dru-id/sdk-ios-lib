@@ -69,13 +69,13 @@ class BaseSocialLoginViewModel: NSObject {
             let clientId = DruID.shared.dependencyManager?.keychainDataSource.settings?.clientId
             guard let clientId = clientId else { fatalError(DruID.sdkNotInitializedError) }
             
-            let name = profile?.name
+            let fullName = profile?.name
             let email = profile?.email
             let birthday = profile?.birthday
             
-            self?.socialData = .init(id: facebookUserId, name: name, surname: profile?.lastName, birthday: birthday, token: tokenString, tokenExpirationDate: tokenExpirationDate)
+            self?.socialData = .init(id: facebookUserId, name: profile?.firstName, surname: profile?.lastName, birthday: birthday, token: tokenString, tokenExpirationDate: tokenExpirationDate)
             
-            let request = LoginRequestData(clientId: clientId, facebookUserId: facebookUserId, token: tokenString, tokenExpirationDate: tokenExpirationDate, email: email, name: name, birthday: birthday)
+            let request = LoginRequestData(clientId: clientId, facebookUserId: facebookUserId, token: tokenString, tokenExpirationDate: tokenExpirationDate, email: email, name: fullName, birthday: birthday)
             
             self?.onSocialLoginSuccess(request: request)
         }

@@ -17,7 +17,7 @@ public struct UserData: Codable {
     let datas: Datas?
     let assertions: AssertionsData?
     let typologies: [String]
-    let updatedOn: Int
+    let updatedOn: String
     let objectId: String
     
     enum CodingKeys: String, CodingKey {

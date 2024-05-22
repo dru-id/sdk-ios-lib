@@ -81,16 +81,16 @@ class RegisterTermsOnlyViewModel: RegisterTermsOnlyVM {
                 let response = try await DruID.shared.dependencyManager?.repository.acceptTermsAfterLogin(request: request)
                 if let response = response {
                     if let errors = response.result.errors, !errors.isEmpty, let error = errors.first {
-                        alert = .init(title: error.message)
+                        self?.alert = .init(title: error.message)
                     } else {
                         // Success
-                        termsCallback(.success(response))
+                        self?.termsCallback(.success(response))
                     }
                 }
                 self?.loading = false
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }

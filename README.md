@@ -34,7 +34,7 @@ dependencies: [
   .package(
     name: "DruID",
     url: "https://github.com/dru-id/sdk-ios-lib.git",
-    .upToNextMajor(from: "1.0.2")
+    .upToNextMajor(from: "1.0.3")
   ),
 
   // Any other dependencies you have...

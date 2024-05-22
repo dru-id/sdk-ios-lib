@@ -93,18 +93,18 @@ class LoginViewModel: BaseSocialLoginViewModel, LoginVM, ObservableObject {
                 let clientTokenData = try await DruID.shared.dependencyManager?.repository.obtainClientToken()
                 guard clientTokenData != nil else {
                     self?.loading = false
-                    alert = .init(error: APIError.sdkSettingsNotSet)
+                    self?.alert = .init(error: APIError.sdkSettingsNotSet)
                     return
                 }
                 let entryPointSettings = try await DruID.shared.dependencyManager?.repository.searchEntrypointByObjetId()
                 guard entryPointSettings != nil else {
                     self?.loading = false
-                    alert = .init(error: APIError.sdkSettingsNotSet)
+                    self?.alert = .init(error: APIError.sdkSettingsNotSet)
                     return
                 }
                 self?.loading = false
                 if let errorMessage = entryPointSettings?.result.errors?.first?.details {
-                    alert = .init(title: errorMessage)
+                    self?.alert = .init(title: errorMessage)
                 } else {
                     self?.entryPointSettings = entryPointSettings
                     if let imageBase64String = entryPointSettings?.content.image?.data,
@@ -114,7 +114,7 @@ class LoginViewModel: BaseSocialLoginViewModel, LoginVM, ObservableObject {
                 }
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }
@@ -141,7 +141,7 @@ class LoginViewModel: BaseSocialLoginViewModel, LoginVM, ObservableObject {
                     if response.result.status == 451 {
                         // user must accept the terms and conditions
                         self?.loginRequestForTermsError = request
-                        showingRegisterTermsOnlyView = true
+                        self?.showingRegisterTermsOnlyView = true
                         
                     } else if response.result.status == 403 {
                         // user not registered in Druid
@@ -149,7 +149,7 @@ class LoginViewModel: BaseSocialLoginViewModel, LoginVM, ObservableObject {
                             self?.latestSocialRequest = request
                             self?.openRegisterUser()
                         } else if let errorMessage = response.result.errors?.first?.details {
-                            alert = .init(title: errorMessage)
+                            self?.alert = .init(title: errorMessage)
                         }
                     } else  if response.result.status == 426 {
                         // email already registered in Druid, need to link accounts
@@ -157,7 +157,7 @@ class LoginViewModel: BaseSocialLoginViewModel, LoginVM, ObservableObject {
                         self?.openLinkAccountView()
                         
                     } else if let errorMessage = response.result.errors?.first?.details {
-                        alert = .init(title: errorMessage)
+                        self?.alert = .init(title: errorMessage)
                     } else {
                         self?.loginCallback(Result.success(response))
                     }
@@ -166,7 +166,7 @@ class LoginViewModel: BaseSocialLoginViewModel, LoginVM, ObservableObject {
                 }
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }

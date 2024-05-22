@@ -102,29 +102,29 @@ class RegisterViewModel: BaseSocialLoginViewModel, RegisterVM {
                 let clientTokenData = try await DruID.shared.dependencyManager?.repository.obtainClientToken()
                 guard clientTokenData != nil else {
                     self?.loading = false
-                    alert = .init(error: APIError.sdkSettingsNotSet)
+                    self?.alert = .init(error: APIError.sdkSettingsNotSet)
                     return
                 }
                 let entryPointSettings = try await DruID.shared.dependencyManager?.repository.searchEntrypointByObjetId()
                 guard entryPointSettings != nil else {
                     self?.loading = false
-                    alert = .init(error: APIError.sdkSettingsNotSet)
+                    self?.alert = .init(error: APIError.sdkSettingsNotSet)
                     return
                 }
                 self?.loading = false
                 if let errorMessage = entryPointSettings?.result.errors?.first?.details {
-                    alert = .init(title: errorMessage)
+                    self?.alert = .init(title: errorMessage)
                 } else {
                     self?.entryPointSettings = entryPointSettings
                 }
                 
-                loadLogo()
+                self?.loadLogo()
                 
-                initDynamicForm()
+                self?.initDynamicForm()
                 
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }
@@ -198,7 +198,7 @@ class RegisterViewModel: BaseSocialLoginViewModel, RegisterVM {
                     if response.result.status == 451 {
                         // user must accept the terms and conditions
                         self?.loginRequestForTermsError = request
-                        showingRegisterTermsOnlyView = true
+                        self?.showingRegisterTermsOnlyView = true
                         
                     } else if response.result.status == 403 {
                         // user not registered in Druid: fill form and proceed with manual registration
@@ -210,7 +210,7 @@ class RegisterViewModel: BaseSocialLoginViewModel, RegisterVM {
                         self?.openLinkAccountView()
                         
                     } else if let errorMessage = response.result.errors?.first?.details {
-                        alert = .init(title: errorMessage)
+                        self?.alert = .init(title: errorMessage)
                     } else {
                         // user successfully registered
                         self?.registerAndLoggedInCallback(Result.success(response))
@@ -220,7 +220,7 @@ class RegisterViewModel: BaseSocialLoginViewModel, RegisterVM {
                 }
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }
@@ -306,23 +306,23 @@ class RegisterViewModel: BaseSocialLoginViewModel, RegisterVM {
                 if let response = response {
                     if let errors = response.result.errors, !errors.isEmpty {
                         errors.forEach { errorData in
-                            let formModel = dynamicFormViewModel?.items.first(where: { model in
+                            let formModel = self?.dynamicFormViewModel?.items.first(where: { model in
                                 model.fieldItem?.id == errorData.message
                             })
                             if let formModel = formModel, let errorDetails = errorData.details {
                                 formModel.inputError = errorDetails
                             }
                         }
-                        alert = .init(title: Strings.register_validation_error_text)
+                        self?.alert = .init(title: Strings.register_validation_error_text)
                     } else {
                         self?.registerResponse = response
                         if response.content?.confirmed == true {
                             // was registered using social login and email is already confirmed (no need to check email)
                             // auto login
-                            if let request = latestSocialRequest {
-                                login(request: request)
-                            } else if let request = socialLoginRequestFromLoginView {
-                                login(request: request)
+                            if let request = self?.latestSocialRequest {
+                                self?.login(request: request)
+                            } else if let request = self?.socialLoginRequestFromLoginView {
+                                self?.login(request: request)
                             } else {
                                 self?.responseMessage = Strings.register_confirmation_sucess_already_confirmed_text
                                 self?.showingRegisterConfirmationView = true
@@ -339,7 +339,7 @@ class RegisterViewModel: BaseSocialLoginViewModel, RegisterVM {
                 }
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }

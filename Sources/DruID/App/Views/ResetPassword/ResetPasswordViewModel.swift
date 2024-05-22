@@ -72,16 +72,16 @@ class ResetPasswordViewModel: ResetPasswordVM {
                 self?.loading = false
                 if let response = response {
                     if let error = response.result.errors?.first {
-                        alert = .init(title: error.message)
+                        self?.alert = .init(title: error.message)
                     } else {
-                        alert = .init(title: Strings.reset_password_success_text, action: .default(title: Strings.common_accept_text, action: { [weak self] in
+                        self?.alert = .init(title: Strings.reset_password_success_text, action: .default(title: Strings.common_accept_text, action: { [weak self] in
                             self?.navigator.dismissResetPassword()
                         }))
                     }
                 }
             } catch {
                 self?.loading = false
-                alert = .init(error: error)
+                self?.alert = .init(error: error)
             }
         }
     }
